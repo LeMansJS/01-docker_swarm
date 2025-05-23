@@ -140,7 +140,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        contraints:
+        constraints:
           - node.role == manager
     networks:
       - caddy_network # Caddy est connecté à ce réseau
@@ -192,7 +192,7 @@ services:
       - caddy_network # Connexion au réseau partagé
 
 networks:
-  caddy_networks:
+  caddy_network:
     external: true # Assure toi que ce réseau est déjà créer
 ```
 
@@ -206,10 +206,10 @@ Pour vérifié que c'est bon :
 docker service ls
 ```
 
-## 🛠️ Étape 08 - Scaler / Unscaler son service
+## 🛠️ Étape 08 - Scaler son service
 Une fois ton service est déployé, tu peux changer dynamiquement le nombre de répliques sans devoir redéployer le stack complet.
 
-### 🔼 Scaler (augmenter le nombre de conteneurs)
+### 🔼 Scaler
 
 Par exemple, pour passer à 5 répliques :
 
@@ -217,13 +217,13 @@ Par exemple, pour passer à 5 répliques :
 docker service scale whoami_whoami=5
 ```
 
-### 🔽 Unscaler (réduire le nombre de conteneurs)
-
-Par exemple, pour passer à 1 seule instance :
+Ou bien :
 
 ```bash
-docker service scale whoami_whoami=1
+docker service update --replicas=5 whoami_whoami
 ```
+
+Ou bien encore en modifiant le nombre de réplicas dans le fichier Compose, puis en redéployant la stack.
 
 ### 🔄 Vérification du scaling
 
