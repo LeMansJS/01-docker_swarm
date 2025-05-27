@@ -10,7 +10,7 @@ Cette conférence s'adresse aux développeurs, étudiants et curieux souhaitant 
 
 📺 Vous avez manqué la conférence en direct ? Pas de souci !  
 Le replay est disponible sur YouTube :  
-👉 [Lien à venir](https://youtube.com) *(sera mis à jour après publication)*
+👉 [Le replay]([https://youtube.com](https://youtu.be/ZozLdz9b0dY?si=EeywCiIHl8goI-lV))
 
 ## 🛠️ Étape 00 - Mise à jour du VPS et installation des packages nécessaire
 
